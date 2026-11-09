@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MATHCIPHER 3D — EASY</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game-root">
+    <div id="hud">
+      <a href="../index.html" class="back">← MENU</a>
+      <div class="brand">MATH<span>CIPHER</span> <small>THE LAST EXIT</small></div>
+      <div class="hud-stats">
+        <div><small>TIME</small><strong id="timer">05:00</strong></div>
+        <div><small>HEALTH</small><strong id="lives">♥ ♥ ♥</strong></div>
+        <div><small>LEVEL</small><strong>EASY</strong></div>
+      </div>
+    </div>
+
+    <div id="crosshair">+</div>
+    <div id="objective"><span class="dot"></span><span id="objective-text">Cari pintu keluar dan temukan terminal enkripsi.</span></div>
+    <div id="interaction-hint" class="hidden">TEKAN <b>E</b> UNTUK BERINTERAKSI</div>
+    <div id="controls-hint">WASD / ↑↓←→ : BERGERAK &nbsp; • &nbsp; SHIFT : LARI &nbsp; • &nbsp; E : INTERAKSI</div>
+
+    <section id="start-screen" class="screen">
+      <div class="screen-card">
+        <p class="eyebrow">YOU ARE NOT SUPPOSED TO BE HERE</p>
+        <h1>THE LAST<br><span>EXIT</span></h1>
+        <p class="level-line">EASY LEVEL — Satu fungsi affine: f(x) atau g(x)</p>
+        <p class="story">Kamu terjebak di lorong yang tidak berujung. Pintu keluar terkunci oleh sistem enkripsi. Temukan terminal, pecahkan kode matematika, dan cari jalan pulang sebelum waktumu habis.</p>
+        <button id="start-btn">MASUK KE BACKROOMS</button>
+        <small>Gunakan keyboard untuk bergerak. Disarankan bermain di komputer.</small>
+      </div>
+    </section>
+
+    <section id="puzzle-screen" class="screen hidden">
+      <div class="puzzle-card">
+        <div class="puzzle-top"><span>SECURITY TERMINAL // 01</span><button id="close-puzzle" aria-label="Tutup">×</button></div>
+        <p class="eyebrow">ENCRYPTION SYSTEM DETECTED</p>
+        <h2>DECRYPT THE MESSAGE</h2>
+        <p class="muted">Pintu keluar terkunci. Pecahkan ciphertext untuk mendapatkan kata sandi.</p>
+        <div class="cipher-label">CIPHERTEXT — ANGKA MODULO 26</div>
+        <div id="ciphertext" class="ciphertext">00 00 00</div>
+        <div id="formula-list" class="formula-list"></div>
+        <label for="answer">MASUKKAN PESAN ASLI</label>
+        <input id="answer" type="text" placeholder="Ketik kata sandi..." autocomplete="off" maxlength="20">
+        <button id="submit-answer">UNLOCK EXIT</button>
+        <p id="puzzle-feedback" aria-live="polite"></p>
+        <small class="math-note">A = 0, B = 1, ..., Z = 25. Gunakan modulo 26.</small>
+      </div>
+    </section>
+
+    <section id="end-screen" class="screen hidden">
+      <div class="screen-card">
+        <p class="eyebrow" id="end-eyebrow">MISSION COMPLETE</p>
+        <h1 id="end-title">YOU ESCAPED</h1>
+        <p id="end-message">Kamu berhasil keluar dari Backrooms.</p>
+        <button id="retry-btn">MAIN LAGI</button>
+        <a class="menu-link" href="../index.html">KEMBALI KE MENU</a>
+      </div>
+    </section>
+
+    <div id="loading">MEMUAT BACKROOMS<span>...</span></div>
+  </div>
+  <script type="module" src="script.js"></script>
+</body>
+</html>

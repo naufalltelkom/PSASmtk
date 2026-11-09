@@ -1,0 +1,6 @@
+{
+  "name": "MathCipher 3D: The Last Exit",
+  "description": "Game 3D penjelajahan Backrooms dengan kontrol responsif, animasi karakter detail, dan teka-teki kriptografi affine cipher.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
